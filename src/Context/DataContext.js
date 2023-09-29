@@ -45,6 +45,8 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  
+
   const onDelete = async (id) => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
@@ -71,7 +73,7 @@ export const ContextProvider = ({ children }) => {
   }
 
   return (
-    <DataContext.Provider value={{ photosData, onDelete, onAdd, loading ,currentPage,itemsPerPage, setCurrentPage, paginate}}>
+    <DataContext.Provider value={{ photosData, onDelete, onAdd, loading ,currentPage,itemsPerPage, setCurrentPage, paginate, setPhotosData}}>
       {children}
     </DataContext.Provider>
   );

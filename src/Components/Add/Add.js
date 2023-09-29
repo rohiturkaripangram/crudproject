@@ -18,12 +18,11 @@ const Add = () => {
         <input placeholder='title' name="title" />
         <input placeholder='url' name='url' />
         <button className='submit' onSubmit={handleSubmit}>
-            Add
+            Add Here
         </button>
         </form>
        
     </div>
   )
 }
-
 export default Add
