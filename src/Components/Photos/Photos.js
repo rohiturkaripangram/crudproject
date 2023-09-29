@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import "./Photos.css";
 
 import { DataContext } from "../../Context/DataContext";
-import Pagination from "../Pagination/Pagination";
+import CustomPagination from "../Pagination/Pagination";
+import PaginationComp from "../Pagination/Pagination";
 
 const Photos = () => {
   const {
@@ -26,9 +27,7 @@ const Photos = () => {
 
   return (
     <div>
-      {loading ? (
-        <h1>...loading</h1>
-      ) : (
+    
         <div className="media">
           {currentItems.map((element) => (
             <div key={element.id} className="card">
@@ -48,9 +47,9 @@ const Photos = () => {
               </div>
             </div>
           ))}
-          <Pagination />
+          <PaginationComp />
         </div>
-      )}
+      
     </div>
   );
 };
