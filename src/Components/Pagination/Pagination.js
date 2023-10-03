@@ -17,13 +17,18 @@ const PaginationComp = () => {
   const endIndex = Math.min(startIndex + 10, pageNumbers.length);
   const currentNumbers = pageNumbers.slice(startIndex, endIndex);
 
+  const isNextBtnDisabled = currentPageGroup === 50;
+  const isPrevBtnDisabled = currentPageGroup === 1;
+  
+
   return (
     <div>
       <Pagination>
         <Pagination.Prev
           onClick={() =>
-            paginate(currentPage > 1 ? startIndex - 10 : currentPage)
+            paginate(currentPage >= 1 ? startIndex - 9 : currentPage)
           }
+          disabled={isPrevBtnDisabled}
         />
 
         {currentNumbers.map((number) => (
@@ -44,6 +49,7 @@ const PaginationComp = () => {
                 : currentPage
             )
           }
+          disabled={isNextBtnDisabled}
         />
       </Pagination>
     </div>
